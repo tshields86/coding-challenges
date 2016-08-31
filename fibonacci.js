@@ -23,16 +23,27 @@ function fibonacci2(num){
   return b;
 };
 console.log(fibonacci2(6));
-console.log(fibonacci3(10));
+console.log(fibonacci2(10));
 // Time complexity: O(N)
 
+function fibonacci3(n){
+  var fibo = [0, 1];
+  if (n <= 2) return 1;
+  for (var i = 2; i <=n; i++ ){
+   fibo[i] = fibo[i-1]+fibo[i-2];
+  }
+ return fibo[n];
+}
+console.log(fibonacci2(6));
+console.log(fibonacci2(10));
+
 // third attempt using recursion
-function fibonacci3(n) {
-    if(n <= 2)
-      return 1;
+function fibonacciRec(n) {
+    if(n <= 1)
+      return n;
     else
-      return fibonacci3(n - 1) + fibonacci3(n - 2);
+      return fibonacciRec(n - 1) + fibonacciRec(n - 2);
 };
-console.log(fibonacci3(6));
-console.log(fibonacci3(10));
+console.log(fibonacciRec(6));
+console.log(fibonacciRec(10));
 // Time complexity: O(2^N)
