@@ -27,15 +27,16 @@ console.log(fibonacci2(10));
 // Time complexity: O(N)
 
 function fibonacci3(n){
-  var fibo = [0, 1];
+  let fibo = [0, 1];
   if (n <= 2) return 1;
   for (var i = 2; i <=n; i++ ){
-   fibo[i] = fibo[i-1]+fibo[i-2];
+    fibo[i] = fibo[i-1]+fibo[i-2];
   }
- return fibo[n];
+  // console.log("fibo", fibo);
+  return fibo[n];
 }
-console.log(fibonacci2(6));
-console.log(fibonacci2(10));
+console.log(fibonacci3(6));
+console.log(fibonacci3(10));
 
 // third attempt using recursion
 function fibonacciRec(n) {
